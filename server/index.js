@@ -9,10 +9,13 @@ app.use(cors());
 app.use(express.json());
 
 mongoose
-    .connect("mongoose://127.0.0.1:27017/ecommerce", {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
+    .connect(
+        "mongodb+srv://think41user:think41pass@cluster0.dz7cl.mongodb.net/ecommerce?retryWrites=true&w=majority",
+        {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        }
+    )
     .then(() => console.log("Connected to MongoDB"))
     .catch((err) => console.error("MongoDB connection error:", err));
 app.use("/api/products", productRoutes);
