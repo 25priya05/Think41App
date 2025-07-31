@@ -9,7 +9,8 @@ const productSchema = new mongoose.Schema({
     retail_price: Number,
     department: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Deparrtment",
+        ref: "Department",
+        required:true,
     },
     sku: String,
     distribution_center_id: Number,

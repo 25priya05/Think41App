@@ -7,6 +7,8 @@ const app = express();
 const PORT = 5000;
 app.use(cors());
 app.use(express.json());
+const departmentRoutes = require('./routes/departmentRoutes');
+app.use('/api/departments',departmentRoutes);
 
 mongoose
     .connect(
